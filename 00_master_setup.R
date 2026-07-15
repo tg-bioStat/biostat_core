@@ -26,14 +26,25 @@ pacman::p_load(
 )
 
 # ------------------------------------------------------------------------------
-# 2. PATH ARCHITECTURE | PFAD-ARCHITEKTUR
+# 2a. PATH ARCHITECTURE | PFAD-ARCHITEKTUR
 # ------------------------------------------------------------------------------
 # EN: Define absolute paths to the secure Proton Drive vault for this project.
 # DE: Definition der absoluten Pfade zum Proton-Tresor für dieses Projekt.
 
-PATH_DATA_RAW <- "C:/Users/timga/Proton Drive/tgappmeier/My files/Berufliches/tg-bioStat/PROJEKTNAME/01_Raw_Data"
-PATH_DATA_OUT <- "C:/Users/timga/Proton Drive/tgappmeier/My files/Berufliches/tg-bioStat/PROJEKTNAME/02_Processed_Data"
-PATH_REPORTS  <- "C:/Users/timga/Proton Drive/tgappmeier/My files/Berufliches/tg-bioStat/PROJEKTNAME/03_Reports"
+PATH_DATA_RAW <- "C:/Users/timga/Proton Drive/tgappmeier/My files/Berufliches/tg-bioStat/04_Projekte/PROJEKTNAME/01_Raw_Data"
+PATH_DATA_OUT <- "C:/Users/timga/Proton Drive/tgappmeier/My files/Berufliches/tg-bioStat/04_Projekte/PROJEKTNAME/02_Processed_Data"
+PATH_REPORTS  <- "C:/Users/timga/Proton Drive/tgappmeier/My files/Berufliches/tg-bioStat/04_Projekte/PROJEKTNAME/03_Reports"
+
+# ------------------------------------------------------------------------------
+# 2b. ORDNER-STRUKTUR PRÜFEN & ERSTELLEN | CHECK & CREATE DIRECTORIES
+# ------------------------------------------------------------------------------
+# EN: Create the directories in Proton Drive if they do not exist yet.
+# DE: Erstellt die Ordner im Proton Drive automatisch, falls sie fehlen.
+
+if (!dir.exists(PATH_DATA_RAW)) dir.create(PATH_DATA_RAW, recursive = TRUE)
+if (!dir.exists(PATH_DATA_OUT)) dir.create(PATH_DATA_OUT, recursive = TRUE)
+if (!dir.exists(PATH_REPORTS))  dir.create(PATH_REPORTS, recursive = TRUE)
+
 
 # ------------------------------------------------------------------------------
 # 3. DATA IMPORT | DATEN-IMPORT (Read-only!)
